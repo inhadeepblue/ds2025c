@@ -19,6 +19,16 @@ class LinkedList:
         current.link = Node(data)
 
 
+    def __str__(self):
+        current = self.head
+        out_texts = ""
+        while current is not None:
+            out_texts = out_texts + str(current.data) + " -> "
+            current = current.link
+        # return "Linked list!"
+        return out_texts + "END"
+
+
 ll = LinkedList()
 ll.append(8)
 ll.append(10)
