@@ -28,6 +28,7 @@ class Queue:
         self.front = self.front.link
         if self.front is None:
             self.rear = None
+        temp.link = None
         return temp.data
 
 
@@ -36,7 +37,7 @@ q.enqueue("Database")
 q.enqueue("Data structure")
 print(q.size, q.front.data, q.rear.data)
 print(q.dequeue())
-print(q.size, q.front.data, q.rear.data)
+# print(q.size, q.front.data, q.rear.data)
 print(q.dequeue())
 print(q.size, q.front, q.rear)
 # print(q.dequeue())
