@@ -79,7 +79,12 @@ def delete(node, value):
             return node.right
         elif node.right is None:
             return node.left
-
+        # 자식 노드가 2개인 경우
+        min_larger_node = node.right
+        while min_larger_node.left:
+            min_larger_node = min_larger_node.left  # move
+        node.data = min_larger_node.data
+        node.right = delete(node.right, min_larger_node.data)
     return node
 
 
