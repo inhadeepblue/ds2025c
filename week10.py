@@ -49,8 +49,8 @@ def insert(root, value):
     return root
 
 
-def search():
-    find_number = int(input())
+def search(find_number):
+
     current = root
     while True:
         if find_number == current.data:
@@ -73,7 +73,6 @@ if __name__ == "__main__":
     # numbers = [10, 15, 8, 3, 9, 1, 7, 100]
     root = None
 
-    # 1번째 원소 부터 마지막 원소까지
     for number in numbers:
         root = insert(root, number)
 
@@ -84,5 +83,7 @@ if __name__ == "__main__":
     in_order(root)  # 3->8->9->10->15
     print()
     pre_order(root)  # 10->8->3->9->15
+    print()
 
-    search()
+    number = int(input("찾는 값 입력 : "))  # 입력 부분을 search함수에서 제거
+    search(number)
