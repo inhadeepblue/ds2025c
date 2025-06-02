@@ -49,7 +49,7 @@ g1.graph[daejeon][seoul] = 11; g1.graph[daejeon][gangneung] = 12; g1.graph[daeje
 g1.graph[gwangju][seoul] = 55; g1.graph[gwangju][daejeon] = 20; g1.graph[gwangju][busan] = 28
 g1.graph[busan][daejeon] = 30; g1.graph[busan][gwangju] = 28
 
-print('도시 간 도로 건설을 위한 전체 연결도')
+print("도시 간 도로 건설을 위한 전체 연결도")
 print_graph(g1)
 
 edges = list()
@@ -73,12 +73,15 @@ for cost, s, e in edges:
 
 
 mst_graph = Graph(graph_size)
-for w, s, e in mst_edges:
-    mst_graph.graph[s][e] = w
-    mst_graph.graph[e][s] = w
+for cost, s, e in mst_edges:
+    mst_graph.graph[s][e] = cost
+    mst_graph.graph[e][s] = cost
 
 
-print('최소 비용의 도로 연결도')
+print("최소 비용의 도로 연결도")
 print_graph(mst_graph)
-
 print(f"최소 비용 :  {mst_cost}")
+
+print("\n최소 간선 목록")
+for cost, s, e in mst_edges:
+    print(f"{cities[s]} --- {cities[e]} : {cost}")
