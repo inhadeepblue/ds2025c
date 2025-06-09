@@ -1,8 +1,10 @@
+import sys
 n = int(input())  # N (명령어 개수)
 stack = []  # 파이썬의 리스트를 이용
 
 for i in range(n):
-  order = input().strip()
+  # order = input().strip()
+  order = sys.stdin.readline().strip()
   if 'push' in order:  # push X: 정수 X를 스택에 넣는 연산이다.
     number = order.split()  # ex) "push 1"  --> ["push", "1"]
     stack.append(number[-1])  # "1"
